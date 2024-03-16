@@ -39,9 +39,9 @@
             </div>
             {{-- 仕事の内容 --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="Job-Description" :value="__('Job-Description')" />
-              <x-text-input id="Job-Description" class="block mt-1 w-full" type="text" name="Job-Description" :value="old('Job-Description')" required autofocus />
-              <x-input-error :messages="$errors->get('Job-Description')" class="mt-2" />
+              <x-input-label for="JobDescription" :value="__('JobDescription')" />
+              <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus />
+              <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
             </div>
             {{-- 経歴 --}}
             <div class="flex flex-col mb-4">
