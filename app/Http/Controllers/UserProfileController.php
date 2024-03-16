@@ -31,7 +31,7 @@ class UserProfileController extends Controller
             'profile_image' => '',
             'SNS' => '',
             'Industry' => 'required | max:200',
-            'Job-Description' => 'required | max:500',
+            'JobDescription' => 'required | max:500',
             'Career' => 'required | max:400',
             'Qualification' => '',
             'Disk' => '',
@@ -55,9 +55,11 @@ class UserProfileController extends Controller
     }
 
 
-    public function show(string $id) // 特定のユーザープロフィールの詳細を表示
+    // public function show(string $id) // 特定のユーザープロフィールの詳細を表示
+    public function show($id)
     {
-        //
+        $UserProfile = UserProfile::find($id);
+        return response()->view('UserProfile.show', compact('UserProfile'));
     }
 
 

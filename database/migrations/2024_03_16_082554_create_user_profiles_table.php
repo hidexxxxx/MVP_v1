@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('profile_image')->nullable();
             $table->string('SNS')->nullable();
             $table->string('Industry');
-            $table->text('Job-Description');
+            $table->text('JobDescription');
             $table->text('Career');
             $table->text('Qualification')->nullable();
             $table->string('Disk')->nullable();
