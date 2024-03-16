@@ -11,7 +11,8 @@ class UserProfileController extends Controller
 
     public function index()
     {
-        return view('UserProfile.index');// すべてのユーザープロフィールを表示
+        $UserProfiles = [];
+        return view('UserProfile.index' ,compact('UserProfiles'));// すべてのユーザープロフィールを表示
     }
 
 
@@ -25,7 +26,34 @@ class UserProfileController extends Controller
      */
     public function store(Request $request) // 新しいユーザープロフィールをデータベースに格納する
     {
-        //
+        // バリデーション
+        $validator = Validator::make($request->all(), [
+            'Nickname' => 'required | max:50',
+            'profile_image' => '',
+            'SNS' => '',
+            'Industry' => 'required | max:200',
+            'Job-Description' => 'required | max:500',
+            'Career' => 'required | max:400',
+            'Qualification' => '',
+            'Disk' => '',
+            'Whyme' => '',
+            'Product' => '',
+            'Hobby' => 'required | max:200',
+            'Birthplace' => '',
+            'HolidayTime' => '',
+            'OneWord' => '',
+            'Contact' => 'required | max:200',
+        ]);
+
+        // バリデーション:エラー
+        if ($validator->fails()) {
+            return redirect()
+            ->route('UserProfile.create')
+            ->withInput()
+            ->withErrors($validator);
+        }
+        $result = UserProfile::create($request->all());
+        return redirect()->route('UserProfile.index');
     }
 
     /**
