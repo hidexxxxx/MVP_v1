@@ -10,6 +10,7 @@
       <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
           <div class="mb-6">
+
             {{-- ニックネーム --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">ニックネーム</p>
