@@ -6,6 +6,8 @@ use App\Http\Controllers\UserProfileController;
 
 // CRUD処理の一括指定なのでresourceを使う
 Route::resource('UserProfile', UserProfileController::class);
+// Route::put('/UserProfile/{id}', [UserProfileController::class, 'update'])->name('UserProfile.update');
+
 
 Route::get('/', function () {
     return view('welcome');
