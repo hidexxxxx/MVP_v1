@@ -104,8 +104,9 @@ class UserProfileController extends Controller
     }
 
 
-    public function destroy(string $id)// 特定のユーザープロフィールを削除
+    public function destroy($id)// 特定のユーザープロフィールを削除
     {
-        //
+        $result = UserProfile::find($id)->delete();
+        return redirect()->route('UserProfile.index');
     }
 }

@@ -105,12 +105,24 @@
               <x-input-error :messages="$errors->get('Contact')" class="mt-2" />
             </div>
 
+            <!-- 削除ボタン -->
+            <form action="{{ route('UserProfile.destroy',$UserProfile->id) }}" method="POST" class="text-left">
+              @method('delete')
+              @csrf
+              <x-primary-button class="ml-3">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="gray">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </x-primary-button>
+            </form>
+            {{-- 戻るボタン --}}
             <div class="flex items-center justify-end mt-4">
               <a href="{{ url()->previous() }}">
                 <x-secondary-button class="ml-3">
                   {{ __('Back') }}
                 </x-primary-button>
               </a>
+              {{-- アップデートボタン --}}
               <x-primary-button class="ml-3">
                 {{ __('Update') }}
               </x-primary-button>
