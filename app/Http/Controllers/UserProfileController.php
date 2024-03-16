@@ -11,7 +11,8 @@ class UserProfileController extends Controller
 
     public function index()
     {
-        $UserProfiles = [];
+        // $UserProfiles = [];
+        $UserProfiles = UserProfile::getAllOrderByUpdated_at();
         return view('UserProfile.index' ,compact('UserProfiles'));// すべてのユーザープロフィールを表示
     }
 
@@ -21,9 +22,7 @@ class UserProfileController extends Controller
         return view('UserProfile.create'); // 新しいユーザープロフィール作成用のフォームを表示
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request) // 新しいユーザープロフィールをデータベースに格納する
     {
         // バリデーション
@@ -44,7 +43,6 @@ class UserProfileController extends Controller
             'OneWord' => '',
             'Contact' => 'required | max:200',
         ]);
-
         // バリデーション:エラー
         if ($validator->fails()) {
             return redirect()
@@ -56,33 +54,25 @@ class UserProfileController extends Controller
         return redirect()->route('UserProfile.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id) // 特定のユーザープロフィールの詳細を表示
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id) // 特定のユーザープロフィールを編集
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)// 特定のユーザープロフィールをデータベースに更新する
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)// 特定のユーザープロフィールを削除
     {
         //

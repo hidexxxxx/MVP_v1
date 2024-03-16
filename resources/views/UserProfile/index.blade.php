@@ -19,15 +19,15 @@
             </thead>
             <tbody>
               @foreach ($UserProfiles as $UserProfile)
-              <tr class="hover:bg-gray-lighter">
-                <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
-                  <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{$UserProfile->UserProfile}}</h3>
-                  <div class="flex">
-                    <!-- 更新ボタン -->
-                    <!-- 削除ボタン -->
-                  </div>
-                </td>
-              </tr>
+                  <tr class="hover:bg-gray-lighter">
+                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
+                          <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{$UserProfile->Nickname}}</h3>
+                          <div class="flex">
+                          </div>
+                      </td>
+                        <!-- 更新ボタン -->
+                        <!-- 削除ボタン -->
+                  </tr>
               @endforeach
             </tbody>
           </table>
