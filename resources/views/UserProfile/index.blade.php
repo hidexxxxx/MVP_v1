@@ -28,7 +28,7 @@
                         <div class="flex">
                           </div>
 
-                        <!-- 更新ボタン -->
+                        <!-- 編集ボタン -->
                         <form action="{{ route('UserProfile.edit',$UserProfile->id) }}" method="GET" class="text-left">
                           @csrf
                           <x-primary-button class="ml-3">
@@ -38,15 +38,7 @@
                           </x-primary-button>
                         </form>
 
-
-
-
-
-
-
-
                       </td>
-
                   </tr>
               @endforeach
             </tbody>

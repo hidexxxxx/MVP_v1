@@ -71,12 +71,13 @@ class UserProfileController extends Controller
     }
 
 
-    public function update(Request $request, $id)// 特定のユーザープロフィールをデータベースに更新する
+    // 特定のユーザープロフィールをデータベースに更新する
+    public function update(Request $request, $id)
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required | max:50',
-            'profile_image' => '',
+            // 'profile_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'SNS' => '',
             'Industry' => 'required | max:200',
             'JobDescription' => 'required | max:500',
