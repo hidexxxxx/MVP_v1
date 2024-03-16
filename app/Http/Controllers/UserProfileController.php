@@ -55,7 +55,7 @@ class UserProfileController extends Controller
     }
 
 
-    // public function show(string $id) // 特定のユーザープロフィールの詳細を表示
+    // 特定のユーザープロフィールの詳細を表示
     public function show($id)
     {
         $UserProfile = UserProfile::find($id);
@@ -63,15 +63,44 @@ class UserProfileController extends Controller
     }
 
 
-    public function edit(string $id) // 特定のユーザープロフィールを編集
+    // 特定のユーザープロフィールを編集
+    public function edit($id)
     {
-        //
+        $UserProfile = UserProfile::find($id);
+        return response()->view('UserProfile.edit', compact('UserProfile'));
     }
 
 
-    public function update(Request $request, string $id)// 特定のユーザープロフィールをデータベースに更新する
+    public function update(Request $request, $id)// 特定のユーザープロフィールをデータベースに更新する
     {
-        //
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+            'Nickname' => 'required | max:50',
+            'profile_image' => '',
+            'SNS' => '',
+            'Industry' => 'required | max:200',
+            'JobDescription' => 'required | max:500',
+            'Career' => 'required | max:400',
+            'Qualification' => '',
+            'Disk' => '',
+            'Whyme' => '',
+            'Product' => '',
+            'Hobby' => 'required | max:200',
+            'Birthplace' => '',
+            'HolidayTime' => '',
+            'OneWord' => '',
+            'Contact' => 'required | max:200',
+        ]);
+        //バリデーション:エラー
+        if ($validator->fails()) {
+            return redirect()
+            ->route('UserProfile.edit', $id)
+            ->withInput()
+            ->withErrors($validator);
+        }
+        //データ更新処理
+        $result = UserProfile::find($id)->update($request->all());
+        return redirect()->route('UserProfile.index');
     }
 
 
