@@ -44,4 +44,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    // 親データとなるuser_idから子データとなるuserprofileを取得する
+    public function UserUserProfiles()
+    {
+        return $this->hasMany(UserProfile::class);
+    }
+
+
 }

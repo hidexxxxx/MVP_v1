@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\UserProfile;
 use Auth;
+use App\Models\User;
 
 class UserProfileController extends Controller
 {
@@ -115,4 +116,17 @@ class UserProfileController extends Controller
         $result = UserProfile::find($id)->delete();
         return redirect()->route('UserProfile.index');
     }
+
+    // ログインユーザーが作成したデータを認識させる
+    public function mydata()
+    {
+      // Userモデルに定義したリレーションを使用してデータを取得する．
+        $UserProfiles = User::query()
+        ->find(Auth::user()->id)
+        ->UserUserProfiles()
+        ->orderBy('created_at','desc')
+        ->get();
+        return response()->view('UserProfile.index', compact('UserProfiles'));
+    }
+
 }
