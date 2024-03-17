@@ -7,6 +7,7 @@ use App\Http\Controllers\UserProfileController;
 // CRUD処理の一括指定なのでresourceを使う
 // 以下でログインしているユーザーのみ使えるようにする
 Route::middleware('auth')->group(function () {
+    Route::get('/UserProfile/mypage', [UserProfileController::class, 'mydata'])->name('UserProfile.mypage');
     Route::resource('UserProfile', UserProfileController::class);
 });
 
