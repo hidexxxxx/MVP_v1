@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_profiles', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('user_profiles', function (Blueprint $table) {
+            $table->foreignId('user_id')->after('id')->nullable()->constrained()->cascadeOnDelete();
         });
     }
 
@@ -22,6 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_profiles');
+        Schema::table('user_profiles', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn(['user_id']);
+        });
     }
 };

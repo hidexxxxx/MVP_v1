@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\UserProfile;
+use Auth;
 
 class UserProfileController extends Controller
 {
@@ -50,7 +51,11 @@ class UserProfileController extends Controller
             ->withInput()
             ->withErrors($validator);
         }
-        $result = UserProfile::create($request->all());
+        // $result = UserProfile::create($request->all());
+
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
+        // dd(Auth::user());
+        $result = UserProfile::create($data);
         return redirect()->route('UserProfile.index');
     }
 

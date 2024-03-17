@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserProfileController;
 
 // CRUD処理の一括指定なのでresourceを使う
-Route::resource('UserProfile', UserProfileController::class);
-// Route::put('/UserProfile/{id}', [UserProfileController::class, 'update'])->name('UserProfile.update');
-
+// 以下でログインしているユーザーのみ使えるようにする
+Route::middleware('auth')->group(function () {
+    Route::resource('UserProfile', UserProfileController::class);
+});
 
 Route::get('/', function () {
     return view('welcome');
