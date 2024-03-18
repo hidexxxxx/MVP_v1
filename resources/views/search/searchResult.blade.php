@@ -16,8 +16,11 @@
                         <ul>
                             @foreach ($UserProfiles as $UserProfile)
                                 {{-- Nicknameで検索結果を表示 --}}
-                                <li>{{ $UserProfile->Nickname }}</li>
-
+                                <li>
+                                    <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
+                                        {{ $UserProfile->Nickname }}
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                     @endif
