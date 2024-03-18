@@ -15,7 +15,20 @@ class SearchController extends Controller
             $UserProfiles = collect();
         } else {
             $UserProfiles = UserProfile::query()
-                ->where('SNS', 'like', "%{$keyword}%")
+                ->where('Nickname', 'like', "%{$keyword}%")
+                ->orWhere('SNS', 'like', "%{$keyword}%")
+                ->orWhere('Industry', 'like', "%{$keyword}%")
+                ->orWhere('JobDescription', 'like', "%{$keyword}%")
+                ->orWhere('Career', 'like', "%{$keyword}%")
+                ->orWhere('Qualification', 'like', "%{$keyword}%")
+                ->orWhere('Disk', 'like', "%{$keyword}%")
+                ->orWhere('Whyme', 'like', "%{$keyword}%")
+                ->orWhere('Product', 'like', "%{$keyword}%")
+                ->orWhere('Hobby', 'like', "%{$keyword}%")
+                ->orWhere('Birthplace', 'like', "%{$keyword}%")
+                ->orWhere('HolidayTime', 'like', "%{$keyword}%")
+                ->orWhere('OneWord', 'like', "%{$keyword}%")
+                ->orWhere('Contact', 'like', "%{$keyword}%")
                 ->get();
                 // dd($UserProfiles);
         }
