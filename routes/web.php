@@ -13,7 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/UserProfile/search/result', [SearchController::class, 'index'])->name('search.result');
     Route::get('/UserProfile/mypage', [UserProfileController::class, 'mydata'])->name('UserProfile.mypage');
     Route::resource('UserProfile', UserProfileController::class);
-    Route::post('AddProfileImage', [AddProfileImageController::class, 'AddProfileImage'])->name('AddProfileImage');
+    // Route::post('AddProfileImage', [AddProfileImageController::class, 'AddProfileImage'])->name('AddProfileImage');
 });
 
 Route::get('/', function () {

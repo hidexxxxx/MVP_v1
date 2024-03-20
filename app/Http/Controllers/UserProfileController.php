@@ -36,7 +36,10 @@ class UserProfileController extends Controller
         $filename = time() . '_' . $image->getClientOriginalName();
 
         // 画像を指定のディレクトリに保存
-        $image->move(storage_path('app/public/images'), $filename);
+        $image->move(public_path('storage/images'), $filename);
+
+        // 以下でも可能
+        // $image->move(storage_path('app/public/images'), $filename);
     }
 
     // バリデーション
@@ -68,21 +71,20 @@ class UserProfileController extends Controller
     // ユーザープロフィールの作成
     $userProfile = new UserProfile();
     $userProfile->Nickname = $request->input('Nickname');
-    $userProfile->profile_image = $filename; // 画像のファイル名を保存
+    $userProfile->profile_image = $filename;
     $userProfile->SNS = $request->input('SNS');
     $userProfile->Industry = $request->input('Industry');
     $userProfile->JobDescription = $request->input('JobDescription');
     $userProfile->Career = $request->input('Career');
-    $userProfile->Qualification = $request->input('Qualification'); // 追加: Qualification の設定
-    $userProfile->Disk = $request->input('Disk'); // 追加: Disk の設定
-    $userProfile->Whyme = $request->input('Whyme'); // 追加: Whyme の設定
-    $userProfile->Product = $request->input('Product'); // 追加: Product の設定
+    $userProfile->Qualification = $request->input('Qualification');
+    $userProfile->Disk = $request->input('Disk');
+    $userProfile->Whyme = $request->input('Whyme');
+    $userProfile->Product = $request->input('Product');
     $userProfile->Hobby = $request->input('Hobby');
-    $userProfile->Birthplace = $request->input('Birthplace'); // 追加: Birthplace の設定
-    $userProfile->HolidayTime = $request->input('HolidayTime'); // 追加: HolidayTime の設定
-    $userProfile->OneWord = $request->input('OneWord'); // 追加: OneWord の設定
+    $userProfile->Birthplace = $request->input('Birthplace');    $userProfile->HolidayTime = $request->input('HolidayTime');
+    $userProfile->OneWord = $request->input('OneWord');
     $userProfile->Contact = $request->input('Contact');
-    $userProfile->user_id = Auth::user()->id; // ユーザーIDを設定
+    $userProfile->user_id = Auth::user()->id;
 
     $userProfile->save(); // ユーザープロフィールを保存
 
