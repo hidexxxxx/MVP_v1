@@ -21,7 +21,12 @@
                   <tr class="hover:bg-gray-lighter">
                       <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
                         <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
-                          <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{$UserProfile->Nickname}}</h3>
+                          <div class="flex items-center">
+                            @if ($UserProfile->ProfileImage)
+                                <img src="{{ asset('storage/' . $UserProfile->ProfileImage) }}" alt="" class="w-8 h-8 rounded-full mr-2">
+                            @endif
+                            <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
+                        </div>
                         </a>
                         <div class="flex">
                           <!-- 🔽 条件分岐でログインしているユーザが投稿したのみ編集ボタンが表示される -->

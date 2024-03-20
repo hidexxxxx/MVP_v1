@@ -21,11 +21,14 @@
               <x-input-error :messages="$errors->get('Nickname')" class="mt-2" />
             </div>
             {{-- プロフィール写真 --}}
-            {{-- <div class="flex flex-col mb-4">
-              <x-input-label for="profile_image" :value="__('profile_image')" />
-              <x-text-input id="profile_image" class="block mt-1 w-full" type="file" name="profile_image" value="{{$UserProfile->profile_image}}" autofocus />
-              <x-input-error :messages="$errors->get('profile_image')" class="mt-2" />
-            </div> --}}
+            <div class="flex flex-col mb-4">
+              <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
+              <input id="ProfileImage" class="block mt-1 w-full" type="file" name="ProfileImage" accept="image/*">
+              @if($UserProfile->ProfileImage)
+              <img src="{{ asset('storage/images/'.$UserProfile->ProfileImage) }}" alt="Profile Image" class="mt-2">
+              @endif
+              <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
+            </div>
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('SNS')" />

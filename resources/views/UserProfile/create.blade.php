@@ -11,7 +11,7 @@
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
           @include('common.errors')
 
-          <form class="mb-6" action="{{ route('UserProfile.store') }}" method="POST">
+          <form class="mb-6" action="{{ route('UserProfile.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- ニックネーム --}}
             <div class="flex flex-col mb-4">
@@ -20,11 +20,24 @@
               <x-input-error :messages="$errors->get('Nickname')" class="mt-2" />
             </div>
             {{-- プロフィール写真 --}}
+            {{-- <div class="flex flex-col mb-4">
+              <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
+              <input id="ProfileImage" type="file" name="ProfileImage" class="block mt-1 w-full" accept="image/*">
+              <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
+
+            </div> --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="profile_image" :value="__('profile_image')" />
-              {{-- <x-file-input id="profile_image" class="profile_image" type="file" name="profile_image" :value="old('profile_image')" autofocus /> --}}
-              <x-input-error :messages="$errors->get('profile_image')" class="mt-2" />
+              <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
+              <input id="ProfileImage" type="file" name="ProfileImage" class="block mt-1 w-full" accept="image/*">
+              <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
             </div>
+            @if(request()->file('ProfileImage')) <!-- ProfileImage フィールドがアップロードされた場合に処理を行います -->
+            <!-- アップロードされたプロフィール画像を表示 -->
+            <img class="w-1/2 h-1/2" src="{{ asset(request()->file('ProfileImage')->store('public/profile_images')) }}" alt="Profile Image">
+            @endif
+
+
+
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('SNS')" />

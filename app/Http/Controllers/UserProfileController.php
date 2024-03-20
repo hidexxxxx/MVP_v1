@@ -25,40 +25,71 @@ class UserProfileController extends Controller
     }
 
 
-    public function store(Request $request) // 新しいユーザープロフィールをデータベースに格納する
+    // プロフィール情報を保存
+    public function store(Request $request)
     {
-        // バリデーション
-        $validator = Validator::make($request->all(), [
-            'Nickname' => 'required | max:50',
-            'profile_image' => '',
-            'SNS' => '',
-            'Industry' => 'required | max:200',
-            'JobDescription' => 'required | max:500',
-            'Career' => 'required | max:400',
-            'Qualification' => '',
-            'Disk' => '',
-            'Whyme' => '',
-            'Product' => '',
-            'Hobby' => 'required | max:200',
-            'Birthplace' => '',
-            'HolidayTime' => '',
-            'OneWord' => '',
-            'Contact' => 'required | max:200',
-        ]);
-        // バリデーション:エラー
-        if ($validator->fails()) {
-            return redirect()
+    // 画像ファイルの取得と保存
+    $image = $request->file('ProfileImage');
+    $filename = null;
+    if ($image) {
+        // ファイル名を生成
+        $filename = time() . '_' . $image->getClientOriginalName();
+
+        // 画像を指定のディレクトリに保存
+        $image->move(storage_path('app/public/images'), $filename);
+    }
+
+    // バリデーション
+    $validator = Validator::make($request->all(), [
+        'Nickname' => 'required|max:50',
+        'SNS' => '',
+        'Industry' => 'required|max:200',
+        'JobDescription' => 'required|max:500',
+        'Career' => 'required|max:400',
+        'Qualification' => '',
+        'Disk' => '',
+        'Whyme' => '',
+        'Product' => '',
+        'Hobby' => 'required|max:200',
+        'Birthplace' => '',
+        'HolidayTime' => '',
+        'OneWord' => '',
+        'Contact' => 'required|max:200',
+    ]);
+
+    // バリデーション:エラー
+    if ($validator->fails()) {
+        return redirect()
             ->route('UserProfile.create')
             ->withInput()
             ->withErrors($validator);
-        }
-        // $result = UserProfile::create($request->all());
-
-        $data = $request->merge(['user_id' => Auth::user()->id])->all();
-        // dd(Auth::user());
-        $result = UserProfile::create($data);
-        return redirect()->route('UserProfile.index');
     }
+
+    // ユーザープロフィールの作成
+    $userProfile = new UserProfile();
+    $userProfile->Nickname = $request->input('Nickname');
+    $userProfile->profile_image = $filename; // 画像のファイル名を保存
+    $userProfile->SNS = $request->input('SNS');
+    $userProfile->Industry = $request->input('Industry');
+    $userProfile->JobDescription = $request->input('JobDescription');
+    $userProfile->Career = $request->input('Career');
+    $userProfile->Qualification = $request->input('Qualification'); // 追加: Qualification の設定
+    $userProfile->Disk = $request->input('Disk'); // 追加: Disk の設定
+    $userProfile->Whyme = $request->input('Whyme'); // 追加: Whyme の設定
+    $userProfile->Product = $request->input('Product'); // 追加: Product の設定
+    $userProfile->Hobby = $request->input('Hobby');
+    $userProfile->Birthplace = $request->input('Birthplace'); // 追加: Birthplace の設定
+    $userProfile->HolidayTime = $request->input('HolidayTime'); // 追加: HolidayTime の設定
+    $userProfile->OneWord = $request->input('OneWord'); // 追加: OneWord の設定
+    $userProfile->Contact = $request->input('Contact');
+    $userProfile->user_id = Auth::user()->id; // ユーザーIDを設定
+
+    $userProfile->save(); // ユーザープロフィールを保存
+
+    return redirect()->route('UserProfile.index');
+
+    }
+
 
 
     // 特定のユーザープロフィールの詳細を表示
