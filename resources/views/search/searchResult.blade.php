@@ -19,6 +19,7 @@
                         <li class="py-4 border-b border-gray-200">
                             <a href="{{ route('UserProfile.show',$UserProfile->id) }}" class="text-blue-500 hover:underline">
                                 <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
+                                <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-9 h-9 object-cover rounded mr-2">
                             </a>
                         </li>
                         @endforeach

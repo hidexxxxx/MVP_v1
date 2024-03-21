@@ -20,24 +20,15 @@
               <x-input-error :messages="$errors->get('Nickname')" class="mt-2" />
             </div>
             {{-- プロフィール写真 --}}
-            {{-- <div class="flex flex-col mb-4">
-              <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
-              <input id="ProfileImage" type="file" name="ProfileImage" class="block mt-1 w-full" accept="image/*">
-              <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
-
-            </div> --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
               <input id="ProfileImage" type="file" name="ProfileImage" class="block mt-1 w-full" accept="image/*">
               <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
             </div>
             @if(request()->file('ProfileImage')) <!-- ProfileImage フィールドがアップロードされた場合に処理を行います -->
-            <!-- アップロードされたプロフィール画像を表示 -->
-            <img class="w-1/2 h-1/2" src="{{ asset(request()->file('ProfileImage')->store('public/profile_images')) }}" alt="Profile Image">
+              <!-- アップロードされたプロフィール画像を表示 -->
+              <img class="w-1/2 h-1/2" src="{{ asset(request()->file('ProfileImage')->store('public/profile_images')) }}" alt="Profile Image">
             @endif
-
-
-
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('SNS')" />

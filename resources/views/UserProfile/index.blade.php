@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('プロフィール一覧') }}
+      {{ __('利用者一覧') }}
     </h2>
   </x-slot>
 
@@ -12,7 +12,7 @@
           <table class="text-center w-full border-collapse">
             <thead>
               <tr>
-                <th class="py-4 px-6 bg-gray-lightest dark:bg-gray-darkest font-bold uppercase text-lg text-gray-dark dark:text-gray-200 border-b border-grey-light dark:border-grey-dark">プロフィール一覧</th>
+                <th class="py-4 px-6 bg-gray-lightest dark:bg-gray-darkest font-bold uppercase text-lg text-gray-dark dark:text-gray-200 border-b border-grey-light dark:border-grey-dark">利用者一覧</th>
               </tr>
             </thead>
             {{-- 一覧表示 --}}
@@ -22,9 +22,10 @@
                       <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
                         <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
                           <div class="flex items-center">
-                            @if ($UserProfile->ProfileImage)
-                                <img src="{{ asset('storage/' . $UserProfile->ProfileImage) }}" alt="" class="w-8 h-8 rounded-full mr-2">
-                            @endif
+                            @if ($UserProfile->profile_image)
+                                {{-- 該当プロフィール画像表示 --}}
+                                <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-9 h-9 object-cover rounded mr-2">
+                                @endif
                             <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
                         </div>
                         </a>
@@ -46,6 +47,7 @@
                   </tr>
               @endforeach
             </tbody>
+
           </table>
         </div>
       </div>

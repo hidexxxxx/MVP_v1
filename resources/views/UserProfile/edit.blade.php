@@ -10,7 +10,7 @@
       <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
           @include('common.errors')
-          <form class="mb-6" action="{{ route('UserProfile.update',$UserProfile->id) }}" method="POST">
+          <form class="mb-6" action="{{ route('UserProfile.update',$UserProfile->id) }}" method="POST" enctype="multipart/form-data">
             @method('put')
             @csrf
 
@@ -22,12 +22,12 @@
             </div>
             {{-- プロフィール写真 --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="ProfileImage" :value="__('ProfileImage')" />
-              <input id="ProfileImage" class="block mt-1 w-full" type="file" name="ProfileImage" accept="image/*">
-              @if($UserProfile->ProfileImage)
-              <img src="{{ asset('storage/images/'.$UserProfile->ProfileImage) }}" alt="Profile Image" class="mt-2">
-              @endif
-              <x-input-error :messages="$errors->get('ProfileImage')" class="mt-2" />
+              <x-input-label for="ChangedProfileImage" :value="__('ChangedProfileImage')" />
+                <input id="ChangedProfileImage" class="block mt-1 w-full" type="file" name="ChangedProfileImage" accept="image/*">
+                  @if($UserProfile->profile_image)
+                    <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-9 h-9 object-cover rounded mr-2">
+                  @endif
+              <x-input-error :messages="$errors->get('ChangedProfileImage')" class="mt-2" />
             </div>
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
