@@ -44,10 +44,11 @@ class UserProfileController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
+            'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif|',
             'SNS' => '',
-            'Industry' => 'required|max:200',
-            'JobDescription' => 'required|max:500',
-            'Career' => 'required|max:400',
+            'Industry' => 'required|max:30',
+            'JobDescription' => 'required',
+            'Career' => 'required',
             'Qualification' => '',
             'Disk' => '',
             'Whyme' => '',
@@ -55,7 +56,7 @@ class UserProfileController extends Controller
             'Hobby' => 'required|max:200',
             'Birthplace' => '',
             'HolidayTime' => '',
-            'OneWord' => '',
+            'OneWord' => 'required|max:45',
             'Contact' => 'required|max:200',
         ]);
         // バリデーション:エラー
@@ -109,11 +110,12 @@ class UserProfileController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
+            'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|',
             // 'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'SNS' => '',
-            'Industry' => 'required|max:200',
-            'JobDescription' => 'required|max:500',
-            'Career' => 'required|max:400',
+            'Industry' => 'required|max:30',
+            'JobDescription' => 'required',
+            'Career' => 'required',
             'Qualification' => '',
             'Disk' => '',
             'Whyme' => '',
@@ -121,7 +123,7 @@ class UserProfileController extends Controller
             'Hobby' => 'required|max:200',
             'Birthplace' => '',
             'HolidayTime' => '',
-            'OneWord' => '',
+            'OneWord' => 'required|max:45',
             'Contact' => 'required|max:200',
         ]);
         // バリデーション:エラー
