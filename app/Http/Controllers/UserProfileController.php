@@ -169,7 +169,7 @@ class UserProfileController extends Controller
         ->UserUserProfiles()
         ->orderBy('created_at','desc')
         ->get();
-        return response()->view('UserProfile.index', compact('UserProfiles'));
+        return response()->view('UserProfile.mypage', compact('UserProfiles'));
     }
 
 
