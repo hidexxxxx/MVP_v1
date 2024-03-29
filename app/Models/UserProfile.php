@@ -18,4 +18,5 @@ class UserProfile extends Model
     {
         return self::orderBy('updated_at', 'desc')->get();
     }
+
 }
