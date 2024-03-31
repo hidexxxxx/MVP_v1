@@ -172,5 +172,4 @@ class UserProfileController extends Controller
         return response()->view('UserProfile.mypage', compact('UserProfiles'));
     }
 
-
 }
