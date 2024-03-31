@@ -70,7 +70,8 @@
             </div>
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="Disk" :value="__('Disk診断結果')" />
+              <x-input-label for="Disk" :value="__('Disk診断結果(自己分析・診断ツール。人間特性がわかり相手とのスムーズなコミュニケーション方法がわかります。
+                無料診断ツール▶️[https://jp.vonvon.me/quiz/301]。無記入でも可です。)')" />
               <x-text-input id="Disk" class="block mt-1 w-full" type="text" name="Disk" :value="old('Disk')" autofocus />
               <x-input-error :messages="$errors->get('Disk')" class="mt-2" />
             </div>
