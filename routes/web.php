@@ -13,27 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/UserProfile/search/result', [SearchController::class, 'index'])->name('search.result');
     Route::get('/UserProfile/mypage', [UserProfileController::class, 'mydata'])->name('UserProfile.mypage');
     Route::resource('UserProfile', UserProfileController::class);
-
-
-    // Route::get('/terms/TermsConditions', [UserProfileController::class, 'TermsConditions'])->name('terms.TermsConditions');
-    // Route::get('/PrivacyPolicy', [TermsController::class, 'privacyPolicy']);
-    // Route::get('/OurTeam', [TermsController::class, 'aboutUs']);
-
-
-
 });
-
-// Docker環境でterms表示
-// Route::get('/terms/TermsConditions', function () {
-//     return view('TermsConditions');
-// });
-// Route::get('/terms/PrivacyPolicy', function () {
-//     return view('PrivacyPolicy');
-// });
-// Route::get('/terms/OurTeam', function () {
-//     return view('OurTeam');
-// });
-
 
 
 Route::get('/', function () {
