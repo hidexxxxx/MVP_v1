@@ -37,14 +37,16 @@ class UserProfileController extends Controller
             // ファイル名を生成
             $filename = time() . '_' . $image->getClientOriginalName();
             // 画像を指定のディレクトリに保存
-            $image->move(public_path('storage/images'), $filename);
+            // $image->move(public_path('storage/images'), $filename);
+            $image->storeAs('public/images', $filename);
             // 以下でも可能
             // $image->move(storage_path('app/public/images'), $filename);
         }
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
-            'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif|',
+            // 'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif',
+            'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:3000',
             'SNS' => '',
             'Industry' => 'required|max:30',
             'JobDescription' => 'required',
@@ -110,8 +112,8 @@ class UserProfileController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
-            'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|',
-            // 'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            // 'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif',
+            'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:3000',
             'SNS' => '',
             'Industry' => 'required|max:30',
             'JobDescription' => 'required',
