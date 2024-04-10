@@ -20,7 +20,8 @@
             {{-- プロフィール写真 --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">プロフィール写真</p>
-              <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-100 h-75">
+              {{-- <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-100 h-75"> --}}
+              <img src="{{ asset('/LeapCompass360/public/storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-100 h-75">
             </div>
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
