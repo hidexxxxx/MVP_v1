@@ -38,8 +38,8 @@ class UserProfileController extends Controller
             $filename = time() . '_' . $image->getClientOriginalName();
             // 画像を指定のディレクトリに保存
             // $image->move(public_path('storage/images'), $filename);
-            // $image->storeAs('public/images', $filename);
-            $image->storeAs('../storage/app/public/images', $filename);
+            $image->storeAs('public/images', $filename);
+            // $image->storeAs('../storage/app/public/images', $filename);
             // 以下でも可能
             // $image->move(storage_path('app/public/images'), $filename);
         }
@@ -146,8 +146,9 @@ class UserProfileController extends Controller
             // 新しい画像を保存
             $changedImage = $request->file('ChangedProfileImage');
             $filename = time() . '_' . $changedImage->getClientOriginalName();
-            // $changedImage->storeAs('public/images', $filename); // ファイルをstorage/app/public/imagesに保存
-            $changedImage->storeAs('../storage/app/public/images', $filename);
+            // ファイルをstorage/app/public/imagesに保存
+            $changedImage->storeAs('public/images', $filename);
+            // $changedImage->storeAs('../storage/app/public/images', $filename);
             $userProfile->profile_image = $filename; // データベースのパスを更新
         }
         // その他のプロフィール情報を更新

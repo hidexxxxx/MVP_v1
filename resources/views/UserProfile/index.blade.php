@@ -22,8 +22,8 @@
                 <div class="flex items-center gap-x-4">
                   {{-- 該当プロフィール画像表示 --}}
                   @if ($UserProfile->profile_image)
-                    {{-- <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-52 h-42"> --}}
-                    <img src="{{ asset('../storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-52 h-42">
+                    <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-52 h-42">
+                    {{-- <img src="{{ asset('../storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-52 h-42"> --}}
                     {{-- <img src="{{ asset('/LeapCompass360/public/storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-52 h-42"> --}}
                   @endif
                   <div class="grow">
