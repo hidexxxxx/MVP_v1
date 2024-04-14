@@ -46,7 +46,6 @@ class UserProfileController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
-            // 'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif',
             'ProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:3000',
             'SNS' => '',
             'Industry' => 'required|max:30',
@@ -113,7 +112,6 @@ class UserProfileController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'Nickname' => 'required|max:50',
-            // 'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif',
             'ChangedProfileImage' => 'image|mimes:jpeg,png,jpg,gif|max:3000',
             'SNS' => '',
             'Industry' => 'required|max:30',
