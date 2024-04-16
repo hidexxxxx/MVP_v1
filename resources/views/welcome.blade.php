@@ -30,7 +30,7 @@
                                     <a
                                         href="{{ url('/dashboard') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/70 dark:focus-visible:ring-white"
-                                        style="font-size: 2.5rem; opacity: 0.95;"
+                                        style="font-size: 2.7rem; opacity: 0.95;"
                                         >
                                         Dashboard
                                     </a>
@@ -38,7 +38,7 @@
                                     <a
                                         href="{{ route('login') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/70 dark:focus-visible:ring-white"
-                                        style="font-size: 2.5rem; opacity: 0.95;"
+                                        style="font-size: 2.7rem; opacity: 0.95;"
                                         >
                                         Log in
                                     </a>
@@ -47,7 +47,7 @@
                                         <a
                                             href="{{ route('register') }}"
                                             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/70 dark:focus-visible:ring-white"
-                                            style="font-size: 2.5rem; opacity: 0.95;"
+                                            style="font-size: 2.7rem; opacity: 0.95;"
                                             >
                                             Register
                                         </a>

@@ -35,7 +35,7 @@
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('普段使用しているSNSのリンク')" />
-              <x-text-input id="SNS" class="block mt-1 w-full" type="text" name="SNS" :value="old('SNS')" autofocus />
+              <x-text-input id="SNS" class="block mt-1 w-full" type="text" name="SNS" :value="old('SNS')" autofocus placeholder="例：https://twitter.com/xxxxxx" />
               <x-input-error :messages="$errors->get('SNS')" class="mt-2" />
             </div>
             {{-- 今いる業界 --}}
@@ -43,7 +43,7 @@
               <x-input-label for="Industry">
                 {!! __('今いる業界(30字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Industry" class="block mt-1 w-full" type="text" name="Industry" :value="old('Industry')" required autofocus />
+              <x-text-input id="Industry" class="block mt-1 w-full" type="text" name="Industry" :value="old('Industry')" required autofocus placeholder="例：IT系 / メーカー / 金融 " />
               <x-input-error :messages="$errors->get('Industry')" class="mt-2" />
             </div>
             {{-- 仕事の内容 --}}
@@ -51,7 +51,7 @@
               <x-input-label for="JobDescription">
                 {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus />
+              <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。" />
               <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
             </div>
             {{-- 経歴 --}}
@@ -59,32 +59,32 @@
               <x-input-label for="Career">
                 {!! __('これまでの職歴<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus />
+              <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" />
               <x-input-error :messages="$errors->get('Career')" class="mt-2" />
             </div>
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Qualification" :value="__('保有資格')" />
-              <x-text-input id="Qualification" class="block mt-1 w-full" type="text" name="Qualification" :value="old('Qualification')" autofocus />
+              <x-text-input id="Qualification" class="block mt-1 w-full" type="text" name="Qualification" :value="old('Qualification')" autofocus placeholder="例：AWS 認定ソリューションアーキテクト - プロフェッショナル、Docker認定アソシエイトなどのクラウド関連資格を保有" />
               <x-input-error :messages="$errors->get('Qualification')" class="mt-2" />
             </div>
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="Disk" :value="__('Disk診断結果(自己分析・診断ツール。人間特性がわかり相手とのスムーズなコミュニケーション方法がわかります。
-                無料診断ツール▶️[https://jp.vonvon.me/quiz/301]。無記入でも可です。)')" />
-              <x-text-input id="Disk" class="block mt-1 w-full" type="text" name="Disk" :value="old('Disk')" autofocus />
+              <x-input-label for="Disk" :value="__('Disk診断結果(無記入でも可です。Disk診断は人間特性がわかり相手とのスムーズなコミュニケーション方法がわかります。)
+                無料診断ツール▶️https://jp.vonvon.me/quiz/301')" />
+              <x-text-input id="Disk" class="block mt-1 w-full" type="text" name="Disk" :value="old('Disk')" autofocus placeholder="例：C - 慎重型 (Conscientiousness)" />
               <x-input-error :messages="$errors->get('Disk')" class="mt-2" />
             </div>
             {{-- Whyme --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Whyme" :value="__('Whyme')" />
-              <x-text-input id="Whyme" class="block mt-1 w-full" type="text" name="Whyme" :value="old('Whyme')" autofocus />
+              <x-text-input id="Whyme" class="block mt-1 w-full" type="text" name="Whyme" :value="old('Whyme')" autofocus placeholder="現在のWhyMeでも当時のWhyMeでもあれば記載お願いします" />
               <x-input-error :messages="$errors->get('Whyme')" class="mt-2" />
             </div>
             {{-- プロダクトがあればURL --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Product" :value="__('ProductのURL')" />
-              <x-text-input id="Product" class="block mt-1 w-full" type="text" name="Product" :value="old('Product')" autofocus />
+              <x-text-input id="Product" class="block mt-1 w-full" type="text" name="Product" :value="old('Product')" autofocus placeholder="例：https://respair.sakura.ne.jp/GeekCompass/welcome" />
               <x-input-error :messages="$errors->get('Product')" class="mt-2" />
             </div>
             {{-- 趣味、好きなこと --}}
@@ -92,19 +92,19 @@
               <x-input-label for="Hobby">
                 {!! __('趣味(200字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Hobby" class="block mt-1 w-full" type="text" name="Hobby" :value="old('Hobby')" required autofocus />
+              <x-text-input id="Hobby" class="block mt-1 w-full" type="text" name="Hobby" :value="old('Hobby')" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。" />
               <x-input-error :messages="$errors->get('Hobby')" class="mt-2" />
             </div>
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Birthplace" :value="__('出身地')" />
-              <x-text-input id="Birthplace" class="block mt-1 w-full" type="text" name="Birthplace" :value="old('Birthplace')" autofocus />
+              <x-text-input id="Birthplace" class="block mt-1 w-full" type="text" name="Birthplace" :value="old('Birthplace')" autofocus placeholder="例：福岡県 / 東京都 / ..." />
               <x-input-error :messages="$errors->get('Birthplace')" class="mt-2" />
             </div>
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="HolidayTime" :value="__('休日の過ごし方')" />
-              <x-text-input id="HolidayTime" class="block mt-1 w-full" type="text" name="HolidayTime" :value="old('HolidayTime')" autofocus />
+              <x-text-input id="HolidayTime" class="block mt-1 w-full" type="text" name="HolidayTime" :value="old('HolidayTime')" autofocus placeholder="例：昼間は自然に出かけてア散歩し、夜は美味しい食事とゆっくりした時間を過ごします。" />
               <x-input-error :messages="$errors->get('HolidayTime')" class="mt-2" />
             </div>
             {{-- 一言 --}}
@@ -112,7 +112,7 @@
               <x-input-label for="OneWord">
                 {!! __('ひとこと(45字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="OneWord" class="block mt-1 w-full" type="text" name="OneWord" :value="old('OneWord')" autofocus />
+              <x-text-input id="OneWord" class="block mt-1 w-full" type="text" name="OneWord" :value="old('OneWord')" autofocus placeholder="例：クラウドの未来を創る一員として、常に挑戦し続けます！" />
               <x-input-error :messages="$errors->get('OneWord')" class="mt-2" />
             </div>
             {{-- 連絡方法と連絡先 --}}
@@ -120,7 +120,7 @@
               <x-input-label for="Contact">
                 {!! __('連絡方法(200字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Contact" class="block mt-1 w-full" type="text" name="Contact" :value="old('Contact')" required autofocus />
+              <x-text-input id="Contact" class="block mt-1 w-full" type="text" name="Contact" :value="old('Contact')" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！" />
               <x-input-error :messages="$errors->get('Contact')" class="mt-2" />
             </div>
 
