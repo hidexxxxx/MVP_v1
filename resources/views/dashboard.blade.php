@@ -10,7 +10,7 @@
         <div class="lg:w-4/6 mx-auto">
             <div class="flex flex-col sm:flex-col mt-10 justify-center text-center mb-6">
                 <h1 class="sm:text-2xl text-2xl font-medium title-font mb-6 mt-6 text-gray-900">
-                    ※以下の手順①〜③は本サービスで行い、
+                    手順①〜③は本サービスで行い、
                     <br>
                     手順④と⑤は相手の連絡先に各自アポを取ってメンタリングください。
                 </h1>
@@ -135,7 +135,7 @@
                         運営からアンケートなどを送付させていただくことがございます。
                         <br>
                         <br>
-                        サービス・品質の向上のため、是非回答のご協力お願いいたします😄
+                        サービス・品質の向上のため、是非回答のご協力お願いいたします🤗
                     </h1>
                 </div>
             </div>
