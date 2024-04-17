@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
 // Docker環境下
 // Route::get('/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
 
-    Route::get('/LeapCompass360/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
+    Route::get('/Terms/OurTeam', [TermsController::class, 'index']);
 });
 
 
