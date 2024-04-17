@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddProfileImageController;
+use App\Http\Controllers\TermsController;
 
 // CRUD処理の一括指定なのでresourceを使う
 // 以下でログインしているユーザーのみ使えるようにする
@@ -13,6 +14,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/UserProfile/search/result', [SearchController::class, 'index'])->name('search.result');
     Route::get('/UserProfile/mypage', [UserProfileController::class, 'mydata'])->name('UserProfile.mypage');
     Route::resource('UserProfile', UserProfileController::class);
+
+    Route::get('/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
 });
 
 
