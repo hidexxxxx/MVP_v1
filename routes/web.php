@@ -15,7 +15,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/UserProfile/mypage', [UserProfileController::class, 'mydata'])->name('UserProfile.mypage');
     Route::resource('UserProfile', UserProfileController::class);
 
-    Route::get('/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
+// Docker環境下
+// Route::get('/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
+
+    Route::get('/LeapCompass360/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
 });
 
 

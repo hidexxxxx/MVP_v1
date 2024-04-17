@@ -23,7 +23,7 @@
     <body class="antialiased">
         <header class="text-gray-600 body-font mb-4">
             <div class="container mx-auto flex flex-wraxp p-5 flex-col md:flex-row items-center">
-                <img src="{{ asset('images/LeapCompass.png') }}" class="p-2 hover:cursor-pointer" alt="Logo" style="width:15%; height:auto;" onclick="window.location.href = '/UserProfile'">
+                <img src="{{ asset('images/LeapCompass.png') }}" class="p-2 hover:cursor-pointer" alt="Logo" style="width:15%; height:auto;" onclick="window.location.href = '/LeapCompass360/UserProfile'">
             </div>
         </header>
 
