@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TermsController extends Controller
 {
-    public function OurTeamIndex()
+    public function index()
     {
         return view('terms.OurTeam');
         // return response()->view('terms.OurTeam');
