@@ -10,5 +10,6 @@ class TermsController extends Controller
     public function OurTeamIndex()
     {
         return view('terms.OurTeam');
+        // return response()->view('terms.OurTeam');
     }
 }
