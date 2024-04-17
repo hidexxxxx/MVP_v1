@@ -67,8 +67,9 @@
             <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">プライバシーポリシー</button>
         </a>
         {{-- <a href="/OurTeam.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/OurTeam.html" class="sm:ml-4">
-            <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">About Us</button>
+        {{-- <a href="/LeapCompass360/OurTeam.html" class="sm:ml-4"> --}}
+        <a href="/UserProfile/terms/OurTeam" class="sm:ml-4">
+          <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">About Us</button>
         </a>
         </div>
     </div>
