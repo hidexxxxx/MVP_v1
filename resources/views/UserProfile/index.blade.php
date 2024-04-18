@@ -22,7 +22,7 @@
                 <div class="flex items-center gap-x-4">
                   {{-- 該当プロフィール画像表示 --}}
                   @if ($UserProfile->profile_image)
-                    <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27">
+                    <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative; overflow: hidden;">
                       <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-contain">
                     </div>
                   @endif
