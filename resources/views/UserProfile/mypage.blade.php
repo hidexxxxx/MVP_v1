@@ -11,6 +11,18 @@
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
           <div class="mb-6">
             @foreach ($UserProfiles as $UserProfile)
+              <div class="flex justify-end">
+                <!-- 🔽 条件分岐でログインしているユーザが投稿したのみ編集ボタンが表示される -->
+                @if ($UserProfile->user_id === Auth::user()->id)
+                  <!-- 編集ボタン -->
+                  <form action="{{ route('UserProfile.edit',$UserProfile->id) }}" method="GET" class="text-left">
+                    @csrf
+                    <x-primary-button class="ml-3">
+                      {{ __('EDIT') }}
+                    </x-primary-button>
+                  </form>
+                @endif
+              </div>
               {{-- ニックネーム --}}
               <div class="flex flex-col mb-4">
                 <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">ニックネーム</p>
@@ -86,18 +98,6 @@
               <div class="flex flex-col mb-4">
                 <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">連絡方法と連絡先</p>
                 <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Contact">{{$UserProfile->Contact}}</p>
-              </div>
-              <div class="flex">
-                <!-- 🔽 条件分岐でログインしているユーザが投稿したのみ編集ボタンが表示される -->
-                @if ($UserProfile->user_id === Auth::user()->id)
-                  <!-- 編集ボタン -->
-                  <form action="{{ route('UserProfile.edit',$UserProfile->id) }}" method="GET" class="text-left">
-                    @csrf
-                    <x-primary-button class="ml-3">
-                      {{ __('EDIT') }}
-                    </x-primary-button>
-                  </form>
-                @endif
               </div>
             @endforeach
 
