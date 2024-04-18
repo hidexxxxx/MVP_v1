@@ -58,25 +58,22 @@
     <div class="container px-5 py-8 mx-auto flex flex-col sm:flex-row justify-center items-center">
         <img src="{{ asset('images/LeapCompass.png') }}" class="p-2 hover:cursor-pointer" alt="Logo" style="width:15%; height:auto;" onclick="window.location.href = '/LeapCompass360/UserProfile'">
         <div class="flex flex-col sm:flex-row items-center">
-        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 py-2">© 2024 Leap Compass 360 —</p>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 py-2">© 2024 Leap Compass 360 —</p>
 
-        {{-- publicフォルダ内のhtmlファイルを直接開く --}}
-        {{-- <a href="/TermsConditions.html" class="sm:ml-4"> --}}
-        {{-- <a href="/LeapCompass360/TermsConditions.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/UserProfile/terms/TermsConditions" class="sm:ml-4">
-            <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">利用規約</button>
-        </a>
-        {{-- <a href="/PrivacyPolicy.html" class="sm:ml-4"> --}}
-        {{-- <a href="/LeapCompass360/PrivacyPolicy.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/UserProfile/terms/PrivacyPolicy" class="sm:ml-4">
-            <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">プライバシーポリシー</button>
-        </a>
-        {{-- <a href="/OurTeam.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/UserProfile/terms/OurTeam" class="sm:ml-4">
-        {{-- <a href="/LeapCompass360/terms/OurTeam" class="sm:ml-4"> --}}
-        {{-- <a href="/LeapCompass360/UserProfile/terms/OurTeam" class="sm:ml-4"> --}}
-          <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">About Us</button>
-        </a>
+          {{-- 🔽デプロイサーバー下でのURL --}}
+          <a href="/LeapCompass360/UserProfile/terms/TermsConditions" class="sm:ml-4">
+              <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">利用規約</button>
+          </a>
+
+          {{-- 🔽デプロイサーバー下でのURL --}}
+          <a href="/LeapCompass360/UserProfile/terms/PrivacyPolicy" class="sm:ml-4">
+              <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">プライバシーポリシー</button>
+          </a>
+
+          {{-- 🔽デプロイサーバー下でのURL --}}
+          <a href="/LeapCompass360/UserProfile/terms/OurTeam" class="sm:ml-4">
+            <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">About Us</button>
+          </a>
         </div>
     </div>
   </footer>
