@@ -62,16 +62,19 @@
 
         {{-- publicフォルダ内のhtmlファイルを直接開く --}}
         {{-- <a href="/TermsConditions.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/TermsConditions.html" class="sm:ml-4">
+        {{-- <a href="/LeapCompass360/TermsConditions.html" class="sm:ml-4"> --}}
+        <a href="/UserProfile/terms/TermsConditions" class="sm:ml-4">
             <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">利用規約</button>
         </a>
         {{-- <a href="/PrivacyPolicy.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/PrivacyPolicy.html" class="sm:ml-4">
+        {{-- <a href="/LeapCompass360/PrivacyPolicy.html" class="sm:ml-4"> --}}
+        <a href="/UserProfile/terms/PrivacyPolicy" class="sm:ml-4">
             <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">プライバシーポリシー</button>
         </a>
         {{-- <a href="/OurTeam.html" class="sm:ml-4"> --}}
-        <a href="/LeapCompass360/OurTeam.html" class="sm:ml-4">
+        <a href="/UserProfile/terms/OurTeam" class="sm:ml-4">
         {{-- <a href="/LeapCompass360/terms/OurTeam" class="sm:ml-4"> --}}
+        {{-- <a href="/LeapCompass360/UserProfile/terms/OurTeam" class="sm:ml-4"> --}}
           <button class="inline-flex items-center font-light text-gray-500 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-tighter">About Us</button>
         </a>
         </div>
