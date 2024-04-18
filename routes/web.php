@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddProfileImageController;
-use App\Http\Controllers\TermsController;
+use App\Http\Controllers\OurTeamController;
+use App\Http\Controllers\TermsConditionsController;
+use App\Http\Controllers\PrivacyPolicyController;
 
 // CRUD処理の一括指定なのでresourceを使う
 // 以下でログインしているユーザーのみ使えるようにする
@@ -16,7 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('UserProfile', UserProfileController::class);
 
 // Docker環境下
-// Route::get('/UserProfile/terms/OurTeam', [TermsController::class, 'OurTeamIndex'])->name('terms.OurTeam');
+    Route::get('/UserProfile/terms/TermsConditions', [TermsConditionsController::class, 'index'])->name('terms.TermsConditions');
+    Route::get('/UserProfile/terms/PrivacyPolicy', [PrivacyPolicyController::class, 'index'])->name('terms.PrivacyPolicy');
+    Route::get('/UserProfile/terms/OurTeam', [OurTeamController::class, 'index'])->name('terms.OurTeam');
 
     // Route::get('/Terms/OurTeam', [TermsController::class, 'index']);
 });
