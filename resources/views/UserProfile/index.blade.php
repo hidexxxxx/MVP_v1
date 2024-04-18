@@ -19,7 +19,7 @@
         @foreach ($UserProfiles as $UserProfile)
             <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700">
               <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
-                <div class="flex items-center gap-x-4">
+                <div class="flex items-center gap-x-4 mb-8">
                   {{-- 該当プロフィール画像表示 --}}
                   @if ($UserProfile->profile_image)
                     <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative; overflow: hidden;">
@@ -30,13 +30,13 @@
                     </div>
                   @endif
                   <div class="grow">
-                      <h3 class="font-medium text-gray-800 dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
-                      <p class="text-xs uppercase text-gray-500">{{ $UserProfile->Industry }}</p>
+                      <h3 class="font-medium text-xl text-gray-800 dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
+                      <p class="text-sm uppercase text-gray-500">{{ $UserProfile->Industry }}</p>
                   </div>
                 </div>
-                <p class="mt-3 text-gray-500">{{ $UserProfile->OneWord }}</p>
+                <p class="mt-5 text-gray-500">{{ $UserProfile->OneWord }}</p>
               </a>
-              <div class="flex">
+              {{-- <div class="flex mt-4">
                 <!-- 🔽 条件分岐でログインしているユーザが投稿したのみ編集ボタンが表示される -->
                 @if ($UserProfile->user_id === Auth::user()->id)
                   <!-- 編集ボタン -->
@@ -47,7 +47,7 @@
                     </x-primary-button>
                   </form>
                 @endif
-              </div>
+              </div> --}}
             </div>
         @endforeach
     </div>
