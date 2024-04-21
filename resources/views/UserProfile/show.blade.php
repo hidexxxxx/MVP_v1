@@ -36,12 +36,12 @@
             {{-- 仕事の内容 --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">仕事の内容</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="JobDescription">{{$UserProfile->JobDescription}}</p>
+              <div class="py-2 px-3 text-gray-800 dark:text-gray-200 block w-full" id="JobDescription">{!! nl2br(e($UserProfile->JobDescription)) !!}</div>
             </div>
             {{-- 経歴 --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">経歴</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Career">{{$UserProfile->Career}}</p>
+              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Career">{!! nl2br(e($UserProfile->Career)) !!}</div>
             </div>
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
@@ -66,7 +66,7 @@
             {{-- 趣味、好きなこと --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">趣味、好きなこと</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Hobby">{{$UserProfile->Hobby}}</p>
+              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Hobby">{!! nl2br(e($UserProfile->Hobby)) !!}</div>
             </div>
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
@@ -76,7 +76,7 @@
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">休日の過ごし方</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="HolidayTime">{{$UserProfile->HolidayTime}}</p>
+              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="HolidayTime">{!! nl2br(e($UserProfile->HolidayTime)) !!}</div>
             </div>
             {{-- 一言 --}}
             <div class="flex flex-col mb-4">
@@ -86,7 +86,7 @@
             {{-- 連絡方法と連絡先 --}}
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">連絡方法と連絡先</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Contact">{{$UserProfile->Contact}}</p>
+              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Contact">{!! nl2br(e($UserProfile->Contact)) !!}</div>
             </div>
 
             <div class="flex items-center justify-end mt-4">

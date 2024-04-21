@@ -51,7 +51,10 @@
               <x-input-label for="JobDescription">
                 {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。" />
+              {{-- 🔽入力欄単行 --}}
+              {{-- <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。" /> --}}
+              {{-- 🔽入力欄複数行 --}}
+              <textarea id="JobDescription" rows="10" class="block mt-1 w-full" name="JobDescription" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。">{{ old('JobDescription') }}</textarea>
               <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
             </div>
             {{-- 経歴 --}}
@@ -59,7 +62,10 @@
               <x-input-label for="Career">
                 {!! __('これまでの職歴<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" />
+              {{-- 🔽入力欄単行 --}}
+              {{-- <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" /> --}}
+              {{-- 🔽入力欄複数行 --}}
+              <textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。">{{ old('Career') }}</textarea>
               <x-input-error :messages="$errors->get('Career')" class="mt-2" />
             </div>
             {{-- 持っている資格 --}}
@@ -92,7 +98,10 @@
               <x-input-label for="Hobby">
                 {!! __('趣味(200字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Hobby" class="block mt-1 w-full" type="text" name="Hobby" :value="old('Hobby')" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。" />
+              {{-- 🔽入力欄単行 --}}
+              {{-- <x-text-input id="Hobby" class="block mt-1 w-full" type="text" name="Hobby" :value="old('Hobby')" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。" /> --}}
+              {{-- 🔽入力欄複数行 --}}
+              <textarea id="Hobby" class="block mt-1 w-full" name="Hobby" rows="3" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。">{{ old('Hobby') }}</textarea>
               <x-input-error :messages="$errors->get('Hobby')" class="mt-2" />
             </div>
             {{-- 出身地 --}}
@@ -104,7 +113,8 @@
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="HolidayTime" :value="__('休日の過ごし方')" />
-              <x-text-input id="HolidayTime" class="block mt-1 w-full" type="text" name="HolidayTime" :value="old('HolidayTime')" autofocus placeholder="例：昼間は自然に出かけてア散歩し、夜は美味しい食事とゆっくりした時間を過ごします。" />
+              {{-- <x-text-input id="HolidayTime" class="block mt-1 w-full" type="text" name="HolidayTime" :value="old('HolidayTime')" autofocus placeholder="例：昼間は自然に出かけてア散歩し、夜は美味しい食事とゆっくりした時間を過ごします。" /> --}}
+              <textarea id="HolidayTime" class="block mt-1 w-full" name="HolidayTime" rows="3" autofocus placeholder="例：昼間は自然に出かけて散歩し、夜は美味しい食事とゆっくりした時間を過ごします。">{{ old('HolidayTime') }}</textarea>
               <x-input-error :messages="$errors->get('HolidayTime')" class="mt-2" />
             </div>
             {{-- 一言 --}}
@@ -120,7 +130,10 @@
               <x-input-label for="Contact">
                 {!! __('連絡方法(200字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Contact" class="block mt-1 w-full" type="text" name="Contact" :value="old('Contact')" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！" />
+              {{-- 🔽入力欄単行 --}}
+              {{-- <x-text-input id="Contact" class="block mt-1 w-full" type="text" name="Contact" :value="old('Contact')" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！" /> --}}
+              {{-- 🔽入力欄複数行 --}}
+              <textarea id="Contact" class="block mt-1 w-full" name="Contact" rows="3" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！">{{ old('Contact') }}</textarea>
               <x-input-error :messages="$errors->get('Contact')" class="mt-2" />
             </div>
 
