@@ -57,7 +57,7 @@
             {{-- 経歴 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Career">
-                  {!! __('これまでの職歴<span class="text-red-500 text-xl">*</span>') !!}
+                  {!! __('これまでのざっくり経歴<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
               {{-- <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" value="{{$UserProfile->Career}}" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" /> --}}
               <textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。">{{$UserProfile->Career}}</textarea>

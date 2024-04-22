@@ -10,9 +10,13 @@
       <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
           @include('common.errors')
+          <h1><span class="text-red-500 text-xl">*</span>マークは入力必須欄💡</h1>
+
+          <br>
+          <br>
 
           <form class="mb-6" action="{{ route('UserProfile.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+          @csrf
             {{-- ニックネーム --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Nickname">
@@ -35,7 +39,7 @@
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('普段使用しているSNSのリンク')" />
-              <x-text-input id="SNS" class="block mt-1 w-full" type="text" name="SNS" :value="old('SNS')" autofocus placeholder="例：https://twitter.com/xxxxxx" />
+              <x-text-input id="SNS" class="block mt-1 w-full" type="text" name="SNS" :value="old('SNS')" autofocus placeholder="(例)：https://twitter.com/xxxxxx" />
               <x-input-error :messages="$errors->get('SNS')" class="mt-2" />
             </div>
             {{-- 今いる業界 --}}
@@ -43,54 +47,90 @@
               <x-input-label for="Industry">
                 {!! __('今いる業界(30字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="Industry" class="block mt-1 w-full" type="text" name="Industry" :value="old('Industry')" required autofocus placeholder="例：IT系 / メーカー / 金融 " />
+              <x-text-input id="Industry" class="block mt-1 w-full" type="text" name="Industry" :value="old('Industry')" required autofocus placeholder="(例)：IT系 / メーカー / 金融 " />
               <x-input-error :messages="$errors->get('Industry')" class="mt-2" />
             </div>
-            {{-- 仕事の内容 --}}
-            <div class="flex flex-col mb-4">
-              <x-input-label for="JobDescription">
-                {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
-              </x-input-label>
-              {{-- 🔽入力欄単行 --}}
-              {{-- <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。" /> --}}
-              {{-- 🔽入力欄複数行 --}}
-              <textarea id="JobDescription" rows="10" class="block mt-1 w-full" name="JobDescription" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。">{{ old('JobDescription') }}</textarea>
-              <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
-            </div>
-            {{-- 経歴 --}}
-            <div class="flex flex-col mb-4">
-              <x-input-label for="Career">
-                {!! __('これまでの職歴<span class="text-red-500 text-xl">*</span>') !!}
-              </x-input-label>
-              {{-- 🔽入力欄単行 --}}
-              {{-- <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" /> --}}
-              {{-- 🔽入力欄複数行 --}}
-              <textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。">{{ old('Career') }}</textarea>
-              <x-input-error :messages="$errors->get('Career')" class="mt-2" />
-            </div>
+
+{{-- 🔽インデントを変えるとplaceholderのスペース表示が変わってしまうため、下記のインデント記述 --}}
+
+{{-- 仕事の内容 --}}
+<div class="flex flex-col mb-4">
+<x-input-label for="JobDescription">
+  {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
+</x-input-label>
+{{-- 🔽入力欄単行 --}}
+{{-- <x-text-input id="JobDescription" class="block mt-1 w-full" type="text" name="JobDescription" :value="old('JobDescription')" required autofocus placeholder="例：クラウドネイティブアプリケーションの開発とデプロイメントを担当しています。主にマイクロサービスアーキテクチャとコンテナ化技術を活用しています。" /> --}}
+{{-- 🔽入力欄複数行 --}}
+
+<textarea id="JobDescription" rows="10" class="block mt-1 w-full" name="JobDescription" required autofocus placeholder="(例)：
+新規プロジェクトのテクニカルリーダー職
+
+    ▶️AI技術を用いた××向けの新規プロダクトの設計や開発を担当しています。
+    ▶️プロジェクトの進行管理、チームメンバーの育成やモチベーション向上など、チーム全体のパフォーマンス管理。
+    ▶️市場分析や顧客ニーズの分析を基にした経営層への新規プロジェクトの提案やビジネス戦略の策定。
+">{{ old('JobDescription') }}</textarea>
+
+  <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
+</div>
+
+{{-- 経歴 --}}
+<div class="flex flex-col mb-4">
+<x-input-label for="Career">
+  {!! __('これまでのざっくり経歴<span class="text-red-500 text-xl">*</span>') !!}
+</x-input-label>
+{{-- 🔽入力欄単行 --}}
+{{-- <x-text-input id="Career" class="block mt-1 w-full" type="text" name="Career" :value="old('Career')" required autofocus placeholder="例：IT企業でのソフトウェアエンジニアリングからスタートし、スタートアップでのクラウド関連のプロジェクトに参加しました。" /> --}}
+{{-- 🔽入力欄複数行 --}}
+
+<textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="(例)：
+・一社目での開発職経験
+    ▶️⚪︎⚪︎向けプロダクトの設計や開発を担当しました。特に好きだった領域は××の領域や△△の技術です。
+
+・二社目での開発マネジメント経験
+    ▶️××向けプロダクトの開発チームのマネージャーとして活動。プロジェクトの進行管理はもちろんのこと、チームメンバーのモチベーション向上にも力を入れました。
+
+・三社目でのPM職経験
+    ▶️C社では、複数のプロジェクトのマネジメントを担当し、プロジェクトの計画立案から実行、スケジュールや予算の管理も行いました。
+
+・四社目での営業部門のリーダー職経験
+    ▶️D社では、⚪︎⚪︎向けサービスの営業部門のリーダーとして活動。営業チームのマネジメントを通じて、売上目標の策定や達成のための戦略立案を行いました。また、個々の営業担当者の育成や成績評価、目標設定を行いながら、チームのパフォーマンス向上に努め、市場ニーズの分析や顧客フィードバックを基に、営業戦略の改善や新規サービスの開発にも取り組みました。
+">{{ old('Career') }}</textarea>
+
+
+<x-input-error :messages="$errors->get('Career')" class="mt-2" />
+</div>
+
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Qualification" :value="__('保有資格')" />
-              <x-text-input id="Qualification" class="block mt-1 w-full" type="text" name="Qualification" :value="old('Qualification')" autofocus placeholder="例：AWS 認定ソリューションアーキテクト - プロフェッショナル、Docker認定アソシエイトなどのクラウド関連資格を保有" />
+              <x-text-input id="Qualification" class="block mt-1 w-full" type="text" name="Qualification" :value="old('Qualification')" autofocus placeholder="(例)：AWS 認定ソリューションアーキテクト - プロフェッショナル、Docker認定アソシエイトなどのクラウド関連資格を保有" />
               <x-input-error :messages="$errors->get('Qualification')" class="mt-2" />
             </div>
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="Disk" :value="__('Disk診断結果(無記入でも可です。Disk診断は人間特性がわかり相手とのスムーズなコミュニケーション方法がわかります。)
-                無料診断ツール▶️https://jp.vonvon.me/quiz/301')" />
-              <x-text-input id="Disk" class="block mt-1 w-full" type="text" name="Disk" :value="old('Disk')" autofocus placeholder="例：C - 慎重型 (Conscientiousness)" />
+              <x-input-label for="Disk">
+                  {!! __('<p>Disk診断結果(無記入でも可です。)</p>
+                  <p>Disk診断は人間特性を知ることにより、相手とのスムーズなコミュニケーション方法がわかります。🔽無料診断ツールは以下のリンクへ！</p>
+                  <p> << <a href="https://jp.vonvon.me/quiz/301" target="_blank">https://jp.vonvon.me/quiz/301</a> >> </p>') !!}
+              </x-input-label>
+              <select id="Disk" class="block mt-1 w-full" name="Disk" autofocus>
+                  <option value="D - 主導型(Dominance)">主導型 (Dominance)</option>
+                  <option value="I - 社交型 (Influence)">社交型 (Influence)</option>
+                  <option value="S - 安定型 (Steadiness)">安定型 (Steadiness)</option>
+                  <option value="C - 慎重型 (Conscientiousness)">慎重型 (Conscientiousness)</option>
+              </select>
               <x-input-error :messages="$errors->get('Disk')" class="mt-2" />
             </div>
             {{-- Whyme --}}
             <div class="flex flex-col mb-4">
-              <x-input-label for="Whyme" :value="__('Whyme')" />
+              <x-input-label for="Whyme" :value="__('WhyMe')" />
               <x-text-input id="Whyme" class="block mt-1 w-full" type="text" name="Whyme" :value="old('Whyme')" autofocus placeholder="現在のWhyMeでも当時のWhyMeでもあれば記載お願いします" />
               <x-input-error :messages="$errors->get('Whyme')" class="mt-2" />
             </div>
             {{-- プロダクトがあればURL --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Product" :value="__('ProductのURL')" />
-              <x-text-input id="Product" class="block mt-1 w-full" type="text" name="Product" :value="old('Product')" autofocus placeholder="例：https://respair.sakura.ne.jp/GeekCompass/welcome" />
+              <x-text-input id="Product" class="block mt-1 w-full" type="text" name="Product" :value="old('Product')" autofocus placeholder="(例)：https://respair.sakura.ne.jp/GeekCompass/welcome" />
               <x-input-error :messages="$errors->get('Product')" class="mt-2" />
             </div>
             {{-- 趣味、好きなこと --}}
@@ -101,20 +141,20 @@
               {{-- 🔽入力欄単行 --}}
               {{-- <x-text-input id="Hobby" class="block mt-1 w-full" type="text" name="Hobby" :value="old('Hobby')" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。" /> --}}
               {{-- 🔽入力欄複数行 --}}
-              <textarea id="Hobby" class="block mt-1 w-full" name="Hobby" rows="3" required autofocus placeholder="例：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。">{{ old('Hobby') }}</textarea>
+              <textarea id="Hobby" class="block mt-1 w-full" name="Hobby" rows="3" required autofocus placeholder="(例)：自然とアウトドア活動を楽しんでいます。山登りやキャンプ、写真撮影など、自然の美しさを探求することが私のリフレッシュ方法です。">{{ old('Hobby') }}</textarea>
               <x-input-error :messages="$errors->get('Hobby')" class="mt-2" />
             </div>
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Birthplace" :value="__('出身地')" />
-              <x-text-input id="Birthplace" class="block mt-1 w-full" type="text" name="Birthplace" :value="old('Birthplace')" autofocus placeholder="例：福岡県 / 東京都 / ..." />
+              <x-text-input id="Birthplace" class="block mt-1 w-full" type="text" name="Birthplace" :value="old('Birthplace')" autofocus placeholder="(例)：福岡県 / 東京都 / ..." />
               <x-input-error :messages="$errors->get('Birthplace')" class="mt-2" />
             </div>
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="HolidayTime" :value="__('休日の過ごし方')" />
               {{-- <x-text-input id="HolidayTime" class="block mt-1 w-full" type="text" name="HolidayTime" :value="old('HolidayTime')" autofocus placeholder="例：昼間は自然に出かけてア散歩し、夜は美味しい食事とゆっくりした時間を過ごします。" /> --}}
-              <textarea id="HolidayTime" class="block mt-1 w-full" name="HolidayTime" rows="3" autofocus placeholder="例：昼間は自然に出かけて散歩し、夜は美味しい食事とゆっくりした時間を過ごします。">{{ old('HolidayTime') }}</textarea>
+              <textarea id="HolidayTime" class="block mt-1 w-full" name="HolidayTime" rows="3" autofocus placeholder="(例)：昼間は自然に出かけて散歩し、夜は美味しい食事を取りのんびり過ごしています。">{{ old('HolidayTime') }}</textarea>
               <x-input-error :messages="$errors->get('HolidayTime')" class="mt-2" />
             </div>
             {{-- 一言 --}}
@@ -122,7 +162,7 @@
               <x-input-label for="OneWord">
                 {!! __('ひとこと(45字以内)<span class="text-red-500 text-xl">*</span>') !!}
               </x-input-label>
-              <x-text-input id="OneWord" class="block mt-1 w-full" type="text" name="OneWord" :value="old('OneWord')" autofocus placeholder="例：クラウドの未来を創る一員として、常に挑戦し続けます！" />
+              <x-text-input id="OneWord" class="block mt-1 w-full" type="text" name="OneWord" :value="old('OneWord')" autofocus placeholder="(例)：クラウドの未来を創る一員として、常に挑戦し続けます！" />
               <x-input-error :messages="$errors->get('OneWord')" class="mt-2" />
             </div>
             {{-- 連絡方法と連絡先 --}}
@@ -133,7 +173,7 @@
               {{-- 🔽入力欄単行 --}}
               {{-- <x-text-input id="Contact" class="block mt-1 w-full" type="text" name="Contact" :value="old('Contact')" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！" /> --}}
               {{-- 🔽入力欄複数行 --}}
-              <textarea id="Contact" class="block mt-1 w-full" name="Contact" rows="3" required autofocus placeholder="例：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！">{{ old('Contact') }}</textarea>
+              <textarea id="Contact" class="block mt-1 w-full" name="Contact" rows="3" required autofocus placeholder="(例)：自分のX(https://twitter.com/sociality_nxt_0)までDMお願いします！">{{ old('Contact') }}</textarea>
               <x-input-error :messages="$errors->get('Contact')" class="mt-2" />
             </div>
 
