@@ -9,10 +9,11 @@
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <!-- Title -->
         <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">利用者一覧</h2>
+            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">キーワード該当ユーザー</h2>
             <p class="mt-1 text-gray-600 dark:text-gray-400">Creative people</p>
         </div>
         <!-- End Title -->
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($UserProfiles as $UserProfile)
                 <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700">
@@ -20,7 +21,12 @@
                         <div class="flex items-center gap-x-4">
                             {{-- 該当プロフィール画像表示 --}}
                             @if ($UserProfile->profile_image)
-                            <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="rounded w-44 h-33">
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative; overflow: hidden;">
+                            {{-- 🔽縦長画像を縮小して表示ver --}}
+                            <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-contain">
+                            {{-- 🔽縦長画像の真ん中だけを切り取って表示ver --}}
+                            {{-- <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" style="width: 100%; height: 100%; object-fit: cover;"> --}}
+                            </div>
                             @endif
                             <div class="grow">
                                 <h3 class="font-medium text-gray-800 dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
@@ -29,7 +35,7 @@
                         </div>
                     </a>
                     <p class="mt-3 text-gray-500">{{ $UserProfile->OneWord }}</p>
-                    <div class="flex">
+                    {{-- <div class="flex">
                         <!-- 🔽 条件分岐でログインしているユーザが投稿したのみ編集ボタンが表示される -->
                         @if ($UserProfile->user_id === Auth::user()->id)
                         <!-- 編集ボタン -->
@@ -42,7 +48,7 @@
                             </x-primary-button>
                         </form>
                         @endif
-                    </div>
+                    </div> --}}
                 </div>
             @endforeach
         </div>
