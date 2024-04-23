@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('編集画面') }}
+      {{ __('プロフィール編集画面') }}
     </h2>
   </x-slot>
 
@@ -28,6 +28,9 @@
               <x-input-error :messages="$errors->get('Nickname')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- プロフィール写真 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="ChangedProfileImage" :value="__('プロフィール画像')" />
@@ -38,12 +41,18 @@
               <x-input-error :messages="$errors->get('ChangedProfileImage')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="SNS" :value="__('普段使用しているSNSのリンク')" />
               <x-text-input id="SNS" class="block mt-1 w-full" type="text" name="SNS" value="{{$UserProfile->SNS}}" autofocus placeholder="(例)：https://twitter.com/xxxxxx" />
               <x-input-error :messages="$errors->get('SNS')" class="mt-2" />
             </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- 今いる業界 --}}
             <div class="flex flex-col mb-4">
@@ -54,29 +63,34 @@
               <x-input-error :messages="$errors->get('Industry')" class="mt-2" />
             </div>
 
-{{-- 🔽インデントを変えるとplaceholderのスペース表示が変わってしまうため、下記のインデント記述 --}}
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
-{{-- 仕事の内容 --}}
-<div class="flex flex-col mb-4">
-<x-input-label for="JobDescription">
-    {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
-</x-input-label>
-<textarea id="JobDescription" class="block mt-1 w-full" name="JobDescription" rows="10" required autofocus placeholder="(例)：
+            {{-- 🔽インデントを変えるとplaceholderのスペース表示が変わってしまうため、下記のインデント記述 --}}
+            {{-- 仕事の内容 --}}
+            <div class="flex flex-col mb-4">
+            <x-input-label for="JobDescription">
+                {!! __('現職の仕事内容<span class="text-red-500 text-xl">*</span>') !!}
+            </x-input-label>
+            <textarea id="JobDescription" class="block mt-1 w-full" name="JobDescription" rows="10" required autofocus placeholder="(例)：
 新規プロジェクトのテクニカルリーダー職
 
     ▶️AI技術を用いた××向けの新規プロダクトの設計や開発を担当しています。
     ▶️プロジェクトの進行管理、チームメンバーの育成やモチベーション向上など、チーム全体のパフォーマンス管理。
     ▶️市場分析や顧客ニーズの分析を基にした経営層への新規プロジェクトの提案やビジネス戦略の策定。
-">{{$UserProfile->JobDescription}}</textarea>
-<x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
-</div>
+            ">{{$UserProfile->JobDescription}}</textarea>
+            <x-input-error :messages="$errors->get('JobDescription')" class="mt-2" />
+            </div>
 
-{{-- 経歴 --}}
-<div class="flex flex-col mb-4">
-<x-input-label for="Career">
-    {!! __('これまでのざっくり経歴<span class="text-red-500 text-xl">*</span>') !!}
-</x-input-label>
-<textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="(例)：
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
+            {{-- 経歴 --}}
+            <div class="flex flex-col mb-4">
+            <x-input-label for="Career">
+                {!! __('これまでのざっくり経歴<span class="text-red-500 text-xl">*</span>') !!}
+            </x-input-label>
+            <textarea id="Career" class="block mt-1 w-full" name="Career" rows="14" required autofocus placeholder="(例)：
 ・一社目での開発職経験
     ▶️⚪︎⚪︎向けプロダクトの設計や開発を担当しました。特に好きだった領域は××の領域や△△の技術です。
 
@@ -88,9 +102,12 @@
 
 ・四社目での営業部門のリーダー職経験
     ▶️D社では、⚪︎⚪︎向けサービスの営業部門のリーダーとして活動。営業チームのマネジメントを通じて、売上目標の策定や達成のための戦略立案を行いました。また、個々の営業担当者の育成や成績評価、目標設定を行いながら、チームのパフォーマンス向上に努め、市場ニーズの分析や顧客フィードバックを基に、営業戦略の改善や新規サービスの開発にも取り組みました。
-">{{$UserProfile->Career}}</textarea>
-<x-input-error :messages="$errors->get('Career')" class="mt-2" />
-</div>
+            ">{{$UserProfile->Career}}</textarea>
+            <x-input-error :messages="$errors->get('Career')" class="mt-2" />
+            </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
@@ -98,6 +115,9 @@
               <x-text-input id="Qualification" class="block mt-1 w-full" type="text" name="Qualification" value="{{$UserProfile->Qualification}}" autofocus placeholder="(例)：AWS 認定ソリューションアーキテクト - プロフェッショナル、Docker認定アソシエイトなどのクラウド関連資格を保有" />
               <x-input-error :messages="$errors->get('Qualification')" class="mt-2" />
             </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
@@ -116,6 +136,9 @@
               <x-input-error :messages="$errors->get('Disk')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- Whyme --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Whyme" :value="__('Whyme')" />
@@ -123,12 +146,18 @@
               <x-input-error :messages="$errors->get('Whyme')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- プロダクトがあればURL --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Product" :value="__('ProductのURL')" />
               <x-text-input id="Product" class="block mt-1 w-full" type="text" name="Product" value="{{$UserProfile->Product}}" autofocus placeholder="(例)：https://respair.sakura.ne.jp/GeekCompass/welcome" />
               <x-input-error :messages="$errors->get('Product')" class="mt-2" />
             </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- 趣味、好きなこと --}}
             <div class="flex flex-col mb-4">
@@ -139,6 +168,9 @@
               <x-input-error :messages="$errors->get('Hobby')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="Birthplace" :value="__('出身地')" />
@@ -146,12 +178,18 @@
               <x-input-error :messages="$errors->get('Birthplace')" class="mt-2" />
             </div>
 
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
+
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
               <x-input-label for="HolidayTime" :value="__('休日の過ごし方')" />
               <textarea id="HolidayTime" class="block mt-1 w-full" name="HolidayTime" rows="3" autofocus placeholder="(例)：昼間は自然に出かけてア散歩し、夜は美味しい食事とゆっくりした時間を過ごします。">{{$UserProfile->HolidayTime}}</textarea>
               <x-input-error :messages="$errors->get('HolidayTime')" class="mt-2" />
             </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- 一言 --}}
             <div class="flex flex-col mb-4">
@@ -161,6 +199,9 @@
               <x-text-input id="OneWord" class="block mt-1 w-full" type="text" name="OneWord" value="{{$UserProfile->OneWord}}" required autofocus placeholder="(例)：クラウドの未来を創る一員として、常に挑戦し続けます！" />
               <x-input-error :messages="$errors->get('OneWord')" class="mt-2" />
             </div>
+
+            {{-- 区切り線 --}}
+            <hr class="mt-6 mb-6 border-gray-300">
 
             {{-- 連絡方法と連絡先 --}}
             <div class="flex flex-col mb-4">
@@ -172,7 +213,7 @@
             </div>
 
             {{-- 戻るボタン --}}
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-8">
               <a href="{{ url()->previous() }}">
                 <x-secondary-button class="ml-3">
                   {{ __('Back') }}
