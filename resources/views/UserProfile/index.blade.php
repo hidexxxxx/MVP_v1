@@ -24,7 +24,7 @@
                   @if ($UserProfile->profile_image)
                     <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative; overflow: hidden;">
                       {{-- 🔽縦長画像を縮小して表示ver --}}
-                      <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-cover rounded-md">
+                      <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-contain rounded-md">
                       {{-- 🔽縦長画像の真ん中だけを切り取って表示ver --}}
                       {{-- <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" style="width: 100%; height: 100%; object-fit: cover;"> --}}
                     </div>
