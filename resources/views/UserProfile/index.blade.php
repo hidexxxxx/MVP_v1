@@ -19,7 +19,7 @@
       <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           @foreach ($UserProfiles as $UserProfile)
-              <div class="flex flex-col rounded-xl p-4 md:p-6 shadow bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700 transition-all duration-300 hover:border-orange-700 hover:border-4" >
+              <div class="flex flex-col rounded-xl p-4 md:p-6 shadow bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700 transition-all duration-300 hover:border-sky-300 hover:border-4" >
                 <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
                   <div class="flex items-center gap-x-4 mb-8">
                     {{-- 該当プロフィール画像表示 --}}
