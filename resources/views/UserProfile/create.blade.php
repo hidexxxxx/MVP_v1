@@ -4,7 +4,8 @@
       {{ __('新しいプロフィールを作成') }}
     </h2>
   </x-slot>
-  <div class="min-h-screen" style="background-image: linear-gradient(-55deg, #e2b8a5, transparent, #e2b8a5);">
+
+  <div class="min-h-screen" style="background-image: linear-gradient(180deg, #12152b, #36394a, #5c5b65, #928174, #aa7a69);">
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
       <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -235,7 +236,7 @@
     <div class="container px-5 py-8 mx-auto flex flex-col sm:flex-row justify-center items-center">
         <img src="{{ asset('images/LeapCompass.png') }}" class="p-2 hover:cursor-pointer" alt="Logo" style="width:15%; height:auto;" onclick="window.location.href = '/LeapCompass360/UserProfile'">
         <div class="flex flex-col sm:flex-row items-center">
-          <p class="text-sm text-gray-700 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 py-2">© 2024 Leap Compass 360 —</p>
+          <p class="text-sm text-gray-700 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-700 py-2">© 2024 Leap Compass 360 —</p>
 
           {{-- 🔽デプロイサーバー下でのURL --}}
           <a href="/LeapCompass360/UserProfile/terms/TermsConditions" class="sm:ml-4">
