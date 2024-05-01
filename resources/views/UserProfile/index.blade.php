@@ -23,14 +23,15 @@
       <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           @foreach ($UserProfiles as $UserProfile)
-              <div class="flex flex-col rounded-xl p-4 md:p-6 shadow bg-white border border-gray-200 transition-all duration-300 hover:border-orange-300 hover:border-8" >
+              <div class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 transition-all duration-300 hover:border-orange-300 hover:border-8" >
                 <a href="{{ route('UserProfile.show',$UserProfile->id) }}">
                   <div class="flex items-center gap-x-4 mb-8">
                     {{-- 該当プロフィール画像表示 --}}
                     @if ($UserProfile->profile_image)
-                      <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative; overflow: hidden;">
+                      {{-- <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden w-48 h-27" style="width: 211px; height: 118px; position: relative;"> --}}
+                      <div class="aspect-w-16 aspect-h-9 rounded w-48 h-27" style="width: 211px; height: 118px; position: relative;">
                         {{-- 🔽縦長画像を縮小して表示ver --}}
-                        <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-contain rounded-md">
+                        <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-full h-full object-contain">
                         {{-- 🔽縦長画像の真ん中だけを切り取って表示ver --}}
                         {{-- <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" style="width: 100%; height: 100%; object-fit: cover;"> --}}
                       </div>
