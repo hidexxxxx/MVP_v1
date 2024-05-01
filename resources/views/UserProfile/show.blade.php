@@ -8,14 +8,14 @@
   <div class="min-h-screen" style="background-image: linear-gradient(180deg, #12152b, #36394a, #5c5b65, #928174, #aa7a69);">
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
-      <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
+      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="p-6 bg-white border-b border-gray-200">
           <div class="mb-6">
 
             {{-- ニックネーム --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">ニックネーム</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Nickname">{{$UserProfile->Nickname}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">ニックネーム</p>
+              <p class="py-2 px-3 text-gray-800" id="Nickname">{{$UserProfile->Nickname}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -23,7 +23,7 @@
 
             {{-- プロフィール写真 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">プロフィール写真</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">プロフィール写真</p>
               <img src="{{ asset('storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-100 h-75">
               {{-- <img src="{{ asset('/LeapCompass360/public/storage/images/' . $UserProfile->profile_image) }}" alt="ProfileImage" class="w-100 h-75"> --}}
             </div>
@@ -33,8 +33,8 @@
 
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">SNSの情報</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="SNS">{{$UserProfile->SNS}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">SNSの情報</p>
+              <p class="py-2 px-3 text-gray-800" id="SNS">{{$UserProfile->SNS}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -42,8 +42,8 @@
 
             {{-- 今いる業界 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">今いる業界</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Industry">{{$UserProfile->Industry}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">今いる業界</p>
+              <p class="py-2 px-3 text-gray-800" id="Industry">{{$UserProfile->Industry}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -51,8 +51,8 @@
 
             {{-- 仕事の内容 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">仕事の内容</p>
-              <div class="py-2 px-3 text-gray-800 dark:text-gray-200 block w-full" id="JobDescription">{!! nl2br(e($UserProfile->JobDescription)) !!}</div>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">仕事の内容</p>
+              <div class="py-2 px-3 text-gray-800 block w-full" id="JobDescription">{!! nl2br(e($UserProfile->JobDescription)) !!}</div>
             </div>
 
             {{-- 区切り線 --}}
@@ -60,8 +60,8 @@
 
             {{-- 経歴 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">経歴</p>
-              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Career">{!! nl2br(e($UserProfile->Career)) !!}</div>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">経歴</p>
+              <div class="py-2 px-3 text-gray-800" id="Career">{!! nl2br(e($UserProfile->Career)) !!}</div>
             </div>
 
             {{-- 区切り線 --}}
@@ -69,8 +69,8 @@
 
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">持っている資格</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Qualification">{{$UserProfile->Qualification}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">持っている資格</p>
+              <p class="py-2 px-3 text-gray-800" id="Qualification">{{$UserProfile->Qualification}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -78,8 +78,8 @@
 
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Disk診断の結果</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Disk">{{$UserProfile->Disk}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">Disk診断の結果</p>
+              <p class="py-2 px-3 text-gray-800" id="Disk">{{$UserProfile->Disk}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -87,8 +87,8 @@
 
             {{-- Whyme --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Whyme</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Whyme">{{$UserProfile->Whyme}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">Whyme</p>
+              <p class="py-2 px-3 text-gray-800" id="Whyme">{{$UserProfile->Whyme}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -96,8 +96,8 @@
 
             {{-- プロダクトがあればURL --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">プロダクトがあればURL</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Product">{{$UserProfile->Product}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">プロダクトがあればURL</p>
+              <p class="py-2 px-3 text-gray-800" id="Product">{{$UserProfile->Product}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -105,8 +105,8 @@
 
             {{-- 趣味、好きなこと --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">趣味、好きなこと</p>
-              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Hobby">{!! nl2br(e($UserProfile->Hobby)) !!}</div>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">趣味、好きなこと</p>
+              <div class="py-2 px-3 text-gray-800" id="Hobby">{!! nl2br(e($UserProfile->Hobby)) !!}</div>
             </div>
 
             {{-- 区切り線 --}}
@@ -114,8 +114,8 @@
 
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">出身地</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Birthplace">{{$UserProfile->Birthplace}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">出身地</p>
+              <p class="py-2 px-3 text-gray-800" id="Birthplace">{{$UserProfile->Birthplace}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -123,8 +123,8 @@
 
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">休日の過ごし方</p>
-              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="HolidayTime">{!! nl2br(e($UserProfile->HolidayTime)) !!}</div>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">休日の過ごし方</p>
+              <div class="py-2 px-3 text-gray-800" id="HolidayTime">{!! nl2br(e($UserProfile->HolidayTime)) !!}</div>
             </div>
 
             {{-- 区切り線 --}}
@@ -132,8 +132,8 @@
 
             {{-- 一言 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">一言</p>
-              <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="OneWord">{{$UserProfile->OneWord}}</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">一言</p>
+              <p class="py-2 px-3 text-gray-800" id="OneWord">{{$UserProfile->OneWord}}</p>
             </div>
 
             {{-- 区切り線 --}}
@@ -141,8 +141,8 @@
 
             {{-- 連絡方法と連絡先 --}}
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">連絡方法と連絡先</p>
-              <div class="py-2 px-3 text-gray-800 dark:text-gray-200" id="Contact">{!! nl2br(e($UserProfile->Contact)) !!}</div>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800">連絡方法と連絡先</p>
+              <div class="py-2 px-3 text-gray-800" id="Contact">{!! nl2br(e($UserProfile->Contact)) !!}</div>
             </div>
 
             <div class="flex items-center justify-end mt-8">
