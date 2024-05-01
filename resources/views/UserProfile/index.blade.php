@@ -36,7 +36,7 @@
                       </div>
                     @endif
                     <div class="grow">
-                        <h3 class="font-medium text-xl text-gray-800 dark:text-gray-200">{{ $UserProfile->Nickname }}</h3>
+                        <h3 class="font-medium text-xl text-gray-800">{{ $UserProfile->Nickname }}</h3>
                         <p class="text-sm uppercase text-gray-500">{{ $UserProfile->Industry }}</p>
                     </div>
                   </div>
