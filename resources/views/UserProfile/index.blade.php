@@ -6,12 +6,13 @@
     </h2>
   </x-slot>
 
-  {{-- プロフィール一覧カード --}}
+  {{-- 背景の設定 --}}
   {{-- <div class="min-h-screen" style="background-image: linear-gradient(-55deg, #f8af8f, transparent, #f8af8f);"> --}}
   {{-- <div class="min-h-screen" style="background-image: linear-gradient(0deg, transparent, #f8af8f);"> --}}
   {{-- <div class="min-h-screen" style="background-image: linear-gradient(-50deg, #f8af8f, #f7d08a, #f2f2f2);"> --}}
   <div class="min-h-screen" style="background-image: linear-gradient(180deg, #12152b, #36394a, #5c5b65, #928174, #aa7a69);">
 
+    {{-- プロフィール一覧カード --}}
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
