@@ -7,7 +7,7 @@
 
   <div class="min-h-screen" style="background-image: linear-gradient(180deg, #12152b, #36394a, #5c5b65, #928174, #aa7a69);">
   <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
+    <div class="max-w-7xl mx-auto sm:w-8/12 md:w-3/5 lg:w-7/12">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
           @include('common.errors')
@@ -29,7 +29,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- プロフィール写真 --}}
             <div class="flex flex-col mb-4">
@@ -44,7 +44,7 @@
               @endif
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- SNSの情報 --}}
             <div class="flex flex-col mb-4">
@@ -54,7 +54,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 今いる業界 --}}
             <div class="flex flex-col mb-4">
@@ -66,7 +66,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 🔽インデントを変えるとplaceholderのスペース表示が変わってしまうため、下記のインデント記述 --}}
             {{-- 仕事の内容 --}}
@@ -86,7 +86,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 経歴 --}}
             <div class="flex flex-col mb-4">
@@ -112,7 +112,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 持っている資格 --}}
             <div class="flex flex-col mb-4">
@@ -122,7 +122,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- Disk診断の結果 --}}
             <div class="flex flex-col mb-4">
@@ -142,7 +142,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- Whyme --}}
             <div class="flex flex-col mb-4">
@@ -152,7 +152,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- プロダクトがあればURL --}}
             <div class="flex flex-col mb-4">
@@ -162,7 +162,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 趣味、好きなこと --}}
             <div class="flex flex-col mb-4">
@@ -175,7 +175,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 出身地 --}}
             <div class="flex flex-col mb-4">
@@ -185,7 +185,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 休日の過ごし方 --}}
             <div class="flex flex-col mb-4">
@@ -195,7 +195,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 一言 --}}
             <div class="flex flex-col mb-4">
@@ -207,7 +207,7 @@
             </div>
 
             {{-- 区切り線 --}}
-            <hr class="mt-6 mb-6 border-gray-300">
+            <hr class="mt-8 mb-8 border-gray-300">
 
             {{-- 連絡方法と連絡先 --}}
             <div class="flex flex-col mb-4">
